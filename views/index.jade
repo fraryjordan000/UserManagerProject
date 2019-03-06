@@ -7,3 +7,13 @@ html(lang="en")
     title User Management
   body
     h1 Welcome to User Management
+    h2 Add User
+    form(action="/addUser", method="POST")
+      input(name="name", placeholder="Name")
+      input(name="email", placeholder="Email")
+      input(name="age", placeholder="Age")
+      button(type="submit") Submit
+    h2 List Users
+    form(action="/listUsers", method="GET")
+      button(type="submit") Go To List
+      

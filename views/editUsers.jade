@@ -1,0 +1,16 @@
+doctype !DOCTYPE html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Edit User
+    body
+        h1= 'Edit user ' + user.name
+        form(action="/updateUser#{user.id}", method="POST")
+            input(name="name", placeholder="Name", value="#{user.name}")
+            input(name="email", placeholder="Email", value="#{user.email}")
+            input(name="age", placeholder="Age", value="#{user.age}")
+            button(type="submit") Submit Changes
+        form(action="/" method="GET")
+            button(type="submit") Back To List

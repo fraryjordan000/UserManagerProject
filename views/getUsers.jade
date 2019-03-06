@@ -6,4 +6,15 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title User Management
   body
-    h1 Welcome to User Management
+    h1 Users List
+    each user in users
+      ul
+        li= 'Name: ' + user.name
+        li= 'Email: ' + user.email
+        li= 'Age: ' + user.age
+        form(action="/editUser#{user.id}" method="GET")
+          button(type="submit") edit
+        form(action="/deleteUser#{user.id}" method="GET")
+          button(type="submit") delete
+    form(action="/" method="GET")
+      button(type="submit") Back To Menu
